@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JOLLOF RESTAURANTS</title>
+	<style type="text/css">
+		body {
+
+			background-image: url("gambian food.jpg");
+			background-size: cover;
+            font-size: 30px;
+	color: rgb(0, 255, 85);
+		}
+
+		.restaurant-details {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h2>JOLLOF RESTAURANTS</h2>
+	<ul>
+		<li><a href="#" onclick="showDetails('restaurant1')">SAFF SAPP CUISINE</a></li>
+		<li><a href="#" onclick="showDetails('restaurant2')">NYAM JODOH FAST FOOD</a></li>
+		<li><a href="#" onclick="showDetails('restaurant3')">LEKI JOLLOF</a></li>
+	</ul>
+
+	<div id="restaurant-details-container">
+		<div id="restaurant1-details" class="restaurant-details">
+			<h2>SAFF SAPP CUISINE</h2>
+			<p>Some text about SAFF SAPP CUISINE and the dishes they offer.</p>
+			<img src="super kanja.jpg" alt="super kanja">
+		</div>
+    
+
+		<div id="restaurant2-details" class="restaurant-details">
+			<h2>NYAM JODOH FAST FOOD</h2>
+			<p>Some text about NYAM JODOH FAST FOOD and the dishes they offer.</p>
+			<img src="yassa.jpg" alt="yassa">
+		</div>
+
+		<div id="restaurant3-details" class="restaurant-details">
+			<h2>LEKI JOLLOF</h2>
+			<p>Some text about LEKI JOLLOF and the dishes they offer.</p>
+			<img src="domoda.jpg" alt="domoda">
+		</div>
+    </div>
+
+    <script type="text/javascript">
+        function showDetails(restaurantId) {
+            var details = document.getElementById(restaurantId + "-details");
+            var detailsContainer = document.getElementById("restaurant-details-container");
+
+            for (var i = 0; i < detailsContainer.children.length; i++) {
+                var child = detailsContainer.children[i];
+
+                if (child.classList.contains("restaurant-details") && child.id !== restaurantId + "-details") {
+                    child.style.display = "none";
+                }
+            }
+
+            details.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
